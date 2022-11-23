@@ -1,3 +1,2 @@
-
-#live coding playground
-  - coding playground poc for web
+live coding playground
+coding playground poc for web
