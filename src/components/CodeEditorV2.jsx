@@ -2,14 +2,13 @@ import {
     SandpackProvider,
     SandpackCodeEditor,
     SandpackTests,
-    FileTabs,
     SandpackConsole,
-    Navigator,
-    SandpackFileExplorer
+    SandpackFileExplorer,
+    SandpackPreview
 } from '@codesandbox/sandpack-react'
 import { files } from './files.js'
+import { Tab, Tabs } from './TabComponent.jsx'
 import { theme } from './theme.js'
-console.log(files['/isFruit.js'])
 export default function CodeEditor() {
     return (
         <SandpackProvider
@@ -42,9 +41,17 @@ export default function CodeEditor() {
                     <SandpackCodeEditor showTabs={false} visibleFiles={["/isFruit.js"]} autoRun={false} autoSave />
                 </div>
             </div>
-            <SandpackTests autoSave={false} />
-            <SandpackConsole showNavigator />:
-            
+            <Tabs>
+                <Tab component={<div className="text-black">
+                    <SandpackPreview />
+                </div>}>Preview</Tab>
+                <Tab component={<div>
+                    <SandpackConsole showNavigator />
+                </div>}>Console</Tab>
+                <Tab component={<>
+                    <SandpackTests autoSave={false} />
+                </>}>Test</Tab>
+            </Tabs>
         </SandpackProvider>
     )
 }

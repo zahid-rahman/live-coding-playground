@@ -7,7 +7,7 @@ export function isFruit (possibleFruit) {
 const isFruitTestJs = `import { isFruit } from '/isFruit.js'
 describe('', () => {	
   test('test 1: find out banana fruit is in the list', () => {
-    expect(isFruit('banana')).toBe("banana")
+    expect(isFruit("banana")).toBe("banana")
   })
 })
 `
