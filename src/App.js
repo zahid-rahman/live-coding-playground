@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={<CodeEditorLegacy />} />
-          <Route path="/new" exact element={<CodeEditor />} />
+          <Route path="/v2" exact element={<CodeEditor />} />
         </Routes>
       </BrowserRouter>
 

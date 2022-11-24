@@ -2,7 +2,8 @@ import {
     SandpackProvider,
     SandpackCodeEditor,
     SandpackTests,
-    FileTabs
+    FileTabs,
+    SandpackConsole
 } from '@codesandbox/sandpack-react'
 import { files } from './files.js'
 import { theme } from './theme.js'
@@ -15,7 +16,7 @@ export default function CodeEditor() {
             visibleFiles={['/isFruit.js']}
             options={{
                 showNavigator: true,
-                showLineNumbers: false, // default - true
+                showLineNumbers: true, // default - true
                 showInlineErrors: true, // default - false
                 // wrapContent: true, // default - false
                 editorHeight: 500, // default - 300
@@ -28,13 +29,14 @@ export default function CodeEditor() {
             customSetup={{
                 entry: '/isFruit.js',
                 // main: '/isFruit.js',
-                environment: 'parcel',
+                environment: 'webpack',
                 mode: 'tests',
             }}
         >
             {/* <FileTabs /> */}
             <SandpackCodeEditor showTabs={false} />
             <SandpackTests />
+            <SandpackConsole />:
         </SandpackProvider>
     )
 }
