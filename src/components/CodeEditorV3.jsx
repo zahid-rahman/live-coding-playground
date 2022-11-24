@@ -26,7 +26,7 @@ export default function CodeEditorV3() {
                 {/* editor and preview blocks */}
                 <SandpackLayout>
                     <SandpackCodeEditor showTabs closableTabs />
-                    <SandpackPreview />
+                    <SandpackPreview options={{ showConsole: true }}/>
                 </SandpackLayout>
                 {/* logs and test blocks */}
                 <SandpackLayout>
