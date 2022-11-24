@@ -1,7 +1,7 @@
-import { Sandpack, SandpackCodeEditor, SandpackConsole, SandpackLayout, SandpackPreview, SandpackProvider, SandpackTests } from '@codesandbox/sandpack-react'
+import { SandpackCodeEditor, SandpackConsole, SandpackLayout, SandpackPreview, SandpackProvider, SandpackTests } from '@codesandbox/sandpack-react'
 import React, { useState } from 'react'
 
-export default function CodeEditorLegacy() {
+export default function CodeEditorV3() {
     const [env, setEnv] = useState("vanilla")
 
     return (
@@ -17,42 +17,19 @@ export default function CodeEditorLegacy() {
                 <option value="vanilla">Vanilla(javascript)</option>
                 <option value="vanilla-ts">Vanilla(typescript)</option>
             </select>
-            {/* <Sandpack
-                // You can change these examples!
-                // Try uncommenting any of these lines
-                // theme="dark"
-                template={env}
-                options={{
-                    showNavigator: true,
-                    showLineNumbers: false, // default - true
-                    showInlineErrors: true, // default - false
-                    // wrapContent: true, // default - false
-                    editorHeight: 500, // default - 300
-                    // editorWidthPercentage: 60, // default - 50
-                    showTabs: true,
-                    closableTabs: true,
-                    autorun: false,
-                    visibleFiles: ["/App.js", "/index.js"],
-                }}
-            /> */}
-
             <SandpackProvider template={env} options={{
                 showNavigator: true,
-                // showLineNumbers: false, // default - true
-                // showInlineErrors: true, // default - false
-                // wrapContent: true, // default - false
                 editorHeight: 500, // default - 300
-                // editorWidthPercentage: 60, // default - 50
                 autorun: false,
                 visibleFiles: ["/App.js", "/index.js"],
             }}>
+                {/* editor and preview blocks */}
                 <SandpackLayout>
-                    <SandpackCodeEditor showTabs closableTabs autorun={true} />
+                    <SandpackCodeEditor showTabs closableTabs />
                     <SandpackPreview />
-
                 </SandpackLayout>
+                {/* logs and test blocks */}
                 <SandpackLayout>
-
                     <SandpackConsole />
                     <SandpackTests />
                 </SandpackLayout>

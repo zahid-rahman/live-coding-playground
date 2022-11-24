@@ -1,15 +1,16 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CodeEditorLegacy from './components/CodeEditorLegacy';
-import CodeEditor from './components/CodeEditor';
+import CodeEditorV2 from './components/CodeEditorV2';
+import CodeEditorV3 from './components/CodeEditorV3';
 function App() {
   return (
     <div className="App">
-
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={<CodeEditorLegacy />} />
-          <Route path="/v2" exact element={<CodeEditor />} />
+          <Route path="/v2" exact element={<CodeEditorV2 />} />
+          <Route path="/v3" exact element={<CodeEditorV3 />} />
         </Routes>
       </BrowserRouter>
 
