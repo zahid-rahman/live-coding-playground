@@ -41,21 +41,15 @@ describe('', () => {
 
 
   test('Test 3: Anchor is Google! ', () => {
-    // expect(container.querySelector('a')).not.toBeNull()
     expect(container.querySelector('a').innerText).toBe("Google!")
   })
 
 
-  // test('test 4: Remove underline', () => {
-  //   expect(container.querySelector('a')).not.toBeNull()
-  //   console.log(document.querySelector('a').style)
-  //   expect(container.querySelector('a').innerText).toBe("Google!")
-  // })
+  test('test 4: Text color should be red', () => {
+    expect(container.querySelector('a').style.color).toBe("red")
+  })
 })
 `
-
-// const css = ``
-
 export function setCode(code) {
   return code
 }
@@ -67,9 +61,6 @@ export const files = {
     'index.test.js': {
         code: htmlTestCode
     },
-    // 'style.css': {
-    //     code: css
-    // }
 }
 
 export default files
