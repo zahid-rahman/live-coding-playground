@@ -1,23 +1,41 @@
 // files for coding challenges
-const isFruitJs = `/* find banana from this fruit list array ['apple', 'banana', 'cherry']*/
-export function isFruit (possibleFruit) {
-  const fruites = ['apple', 'banana', 'cherry']
+const globalBoilerPlate = `
+import { isFruit } from './main.js'
+/* find banana from this fruit list array ['apple', 'banana', 'cherry']*/
+export function fruit () {
+  
   // write down your code
-  return;
+  const data = isFruit("banana")
+  console.log(data)
+  return data
+  // return data[0] === "banana" ? data[0] : null;
 }`
+
+const mainSnippet = `
+  //find banana from this fruit list array ['apple', 'banana', 'cherry']*/
+  export function isFruit(possibleFruit) {
+    const fruites = ['apple', 'banana', 'cherry']
+    /*write the code here */
+    return null
+  }
+`
+
 // return fruitList.includes(possibleFruit)  
-const isFruitTestJs = `import { isFruit } from '/isFruit.js'
+const isFruitTestJs = `import { fruit } from '/index.js'
 describe('', () => {	
   test('test 1: find out banana fruit is in the list', () => {
-    expect(isFruit("banana")).toBe("banana")
+    expect(fruit()).toBe("banana")
   })
 })
 `
 
 export const files = {
-    '/isFruit.js': {
-        code: isFruitJs
+    '/index.js': {
+        code: globalBoilerPlate
     },
+    '/main.js': {
+      code: mainSnippet
+  },
     '/isFruit.test.js': {
         code: isFruitTestJs
     }

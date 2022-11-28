@@ -3,6 +3,7 @@ import {
     SandpackCodeEditor,
     SandpackTests,
     SandpackConsole,
+    // SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 import { files } from './../files/v2files'
 import { Tab, Tabs } from './TabComponent.jsx'
@@ -10,7 +11,7 @@ export default function CodeEditor() {
     return (
         <SandpackProvider
             files={files}
-            visibleFiles={['/isFruit.js']}
+            // visibleFiles={['/index.js']}
             options={{
                 showNavigator: true,
                 showLineNumbers: true, // default - true
@@ -19,12 +20,12 @@ export default function CodeEditor() {
                 editorHeight: 500, // default - 300
                 // editorWidthPercentage: 60, // default - 50
                 // autorun: false,
-                visibleFiles: ["/isFruit.js"],
+                visibleFiles: ["/main.js"],
                 // autorun: false
             }}
             customSetup={{
-                entry: '/isFruit.js',
-                main: '/isFruit.js',
+                entry: '/main.js',
+                main: '/main.js',
                 environment: 'webpack',
                 mode: 'tests',
             }}
@@ -37,7 +38,7 @@ export default function CodeEditor() {
                 <div className="block relative w-full h-full">
                     <SandpackCodeEditor
                         showTabs
-                        visibleFiles={["isFruit.js"]}
+                        visibleFiles={["main.js"]}
                         autoSave
                         showLineNumbers={true}
                         showInlineErrors={true}
