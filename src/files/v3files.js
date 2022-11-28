@@ -1,4 +1,4 @@
-const htmlFiles = `<!DOCTYPE html>
+const htmlBoilerplateFiles = `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -62,7 +62,7 @@ export function setCode(code) {
 
 export const files = {
     'index.html': {
-        code: htmlFiles
+        code: htmlBoilerplateFiles
     },
     'index.test.js': {
         code: htmlTestCode
