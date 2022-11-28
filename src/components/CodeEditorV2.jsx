@@ -23,7 +23,7 @@ export default function CodeEditor() {
                 editorHeight: 500, // default - 300
                 // editorWidthPercentage: 60, // default - 50
                 // autorun: false,
-                // visibleFiles: ["/App.js", "/index.js"],
+                visibleFiles: ["/index.html"],
             }}
             customSetup={{
                 entry: '/isFruit.js',
