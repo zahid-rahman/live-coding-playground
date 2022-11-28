@@ -1,7 +1,9 @@
+// files for coding challenges
 const isFruitJs = `/* find banana from this fruit list array ['apple', 'banana', 'cherry']*/
 export function isFruit (possibleFruit) {
-    // write down your code
-    return;
+  const fruites = ['apple', 'banana', 'cherry']
+  // write down your code
+  return;
 }`
 // return fruitList.includes(possibleFruit)  
 const isFruitTestJs = `import { isFruit } from '/isFruit.js'
