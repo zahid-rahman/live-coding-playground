@@ -1,25 +1,19 @@
-const htmlFiles = `
-
-<!DOCTYPE html>
+const htmlFiles = `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Link</title>
+    <link rel="stylesheet" src="./style.css"/>
   </head>
-  <body>
-    <div data-testid="test">
+  <body  onload="document.querySelector('a').style">
     <h1>Link</h1>
     <!-- Write the code below this line -->
-        <a href="www.google.com">Google!</a>
-    </div>
   </body>
 </html>
 
 `
 
-// return fruitList.includes(possibleFruit)  
-const htmlTestCode = `
-import { fireEvent, getByText } from '@testing-library/dom'
+const htmlTestCode = `import { fireEvent, getByText } from '@testing-library/dom'
 // import { JSDOM as Jsdom } from 'jsdom'
 import fs from 'fs'
 import path from 'path'
@@ -36,35 +30,46 @@ beforeEach(() => {
 
 
 describe('', () => {
-  test('test 1: link exists ', () => {
-    console.log("cont", container)
+  test('Test 1: link exists ', () => {
     expect(container.querySelector('a')).not.toBeNull()
   })
 
-  test('test 2: Points to www.google.com ', () => {
-    expect(container.querySelector('a')).toHaveAttribute("href","www.google.com")
+
+  test('Test 2: Points to www.google.com ', () => {
+    expect(container.querySelector('a').getAttribute("href")).toBe("www.google.com")
   })
 
-  test('test 2: Anchor is Google! ', () => {
-    expect(container.querySelector('a')).not.toBeNull()
-    expect(getByText(container, 'Google!')).toBeInTheDocument()
+
+  test('Test 3: Anchor is Google! ', () => {
+    // expect(container.querySelector('a')).not.toBeNull()
+    expect(container.querySelector('a').innerText).toBe("Google!")
   })
+
+
+  // test('test 4: Remove underline', () => {
+  //   expect(container.querySelector('a')).not.toBeNull()
+  //   console.log(document.querySelector('a').style)
+  //   expect(container.querySelector('a').innerText).toBe("Google!")
+  // })
 })
 `
 
-const js = ``
+// const css = ``
+
+export function setCode(code) {
+  return code
+}
 
 export const files = {
-    '/index.html': {
+    'index.html': {
         code: htmlFiles
     },
-    '/index.test.js': {
+    'index.test.js': {
         code: htmlTestCode
     },
-    '/index.js': {
-        code: js
-    }
-
+    // 'style.css': {
+    //     code: css
+    // }
 }
 
 export default files

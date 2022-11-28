@@ -37,11 +37,13 @@
     ]
   },
   "devDependencies": {
+    "@codemirror/autocomplete": "^6.3.4",
     "@testing-library/dom": "^8.19.0",
     "autoprefixer": "^10.4.13",
     "classnames": "^2.3.2",
     "jsdom": "^20.0.3",
     "postcss": "^8.4.19",
+    "react-ace": "^10.1.0",
     "react-router-dom": "^6.4.3",
     "tailwindcss": "^3.2.4"
   }
