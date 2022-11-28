@@ -7,7 +7,7 @@ import {
 } from '@codesandbox/sandpack-react'
 import files from '../files/v3files'
 import { Tab, Tabs } from './TabComponent.jsx'
-import { theme } from './theme.js'
+import { theme } from './../utils/theme.js'
 import CustomEditor from './editorv3/CustomEditor';
 export default function CodeEditorV3() {
 
