@@ -5,19 +5,18 @@ import {
     SandpackPreview,
     SandpackThemeProvider,
 } from '@codesandbox/sandpack-react'
-import files from '../files/v3files'
+import files from '../files/v4files'
 import { Tab, Tabs } from './TabComponent.jsx'
-import { theme } from './../utils/theme.js'
+import { theme } from './theme.js'
 import CustomEditor from './editorv3/CustomEditor';
-export default function CodeEditorV3() {
+export default function CodeEditorV4() {
 
     return (
         <>
             <SandpackProvider
                 theme={theme}
-                template="vanilla"
+                template="react"
                 files={files}
-                visibleFiles={['index.html']}
                 options={{
                     showNavigator: true,
                     showLineNumbers: true, // default - true
@@ -26,24 +25,21 @@ export default function CodeEditorV3() {
                     editorHeight: 500, // default - 300
                     // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
-                    visibleFiles: ["index.html"],
+                    visibleFiles: ["index.js", "App.js", "Component.js"],
                 }}
                 customSetup={{
-                    entry: '/index.html',
-                    main: '/index.html',
+                    // entry: '/index.html',
+                    // main: '/index.html',
                     environment: 'webpack',
                     mode: 'tests',
                     dependencies: {
-                        "@testing-library/dom": "8.19.0",
+                        "@testing-library/react": "13.4.0",
                         "jsdom": "9.11.0"
                     },
                     autoRun: false
                 }}
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
-                    {/* <div className="flex justify-start h-full flex-col w-72 lg:w-96 xl:w-120">
-                        <SandpackFileExplorer className="" visibleFiles={["index.html"]} />
-                    </div> */}
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
                             <CustomEditor />
@@ -62,6 +58,7 @@ export default function CodeEditorV3() {
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>
+
         </>
 
     )
