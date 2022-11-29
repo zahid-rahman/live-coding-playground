@@ -17,7 +17,6 @@ export default function CodeEditorV4() {
                 theme={theme}
                 template="react"
                 files={files}
-                visibleFiles={["index.js", "App.js"]}
                 options={{
                     showNavigator: true,
                     showLineNumbers: true, // default - true
@@ -41,9 +40,6 @@ export default function CodeEditorV4() {
                 }}
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
-                    {/* <div className="flex justify-start h-full flex-col w-72 lg:w-96 xl:w-120">
-                        <SandpackFileExplorer className="" visibleFiles={["index.html"]} />
-                    </div> */}
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
                             <CustomEditor />
