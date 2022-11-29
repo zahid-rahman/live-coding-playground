@@ -7,10 +7,19 @@ import {
 } from '@codesandbox/sandpack-react'
 import files from '../files/v4files'
 import { Tab, Tabs } from './TabComponent.jsx'
-import { theme } from './theme.js'
+import { theme } from './../utils/theme'
 import CustomEditor from './editorv3/CustomEditor';
+import { useEffect } from 'react';
 export default function CodeEditorV4() {
-
+    useEffect(() => {
+        window.onbeforeunload = function() {
+            return true;
+        };
+    
+        return () => {
+            window.onbeforeunload = null;
+        };
+    }, []);
     return (
         <>
             <SandpackProvider
@@ -58,7 +67,6 @@ export default function CodeEditorV4() {
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>
-
         </>
 
     )

@@ -5,9 +5,18 @@ import {
     SandpackConsole,
     // SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
+import { useEffect } from 'react';
 import { files } from './../files/v2files'
 import { Tab, Tabs } from './TabComponent.jsx'
 export default function CodeEditor() {
+    useEffect(() => {
+        window.onbeforeunload = function () {
+            return true;
+        };
+        return () => {
+            window.onbeforeunload = null;
+        };
+    }, []);
     return (
         <SandpackProvider
             files={files}
@@ -30,11 +39,7 @@ export default function CodeEditor() {
                 mode: 'tests',
             }}
         >
-            {/* <FileTabs /> */}
             <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
-                {/* <div className="flex justify-start h-full flex-col w-72 lg:w-96 xl:w-120">
-                    <SandpackFileExplorer className="" />
-                </div> */}
                 <div className="block relative w-full h-full">
                     <SandpackCodeEditor
                         showTabs
@@ -48,14 +53,11 @@ export default function CodeEditor() {
                 </div>
             </div>
             <Tabs>
-                {/* <Tab component={<div className="text-black">
-                    <SandpackPreview />
-                </div>}>Preview</Tab> */}
                 <Tab component={<div>
                     <SandpackConsole showNavigator />
                 </div>}>Console</Tab>
                 <Tab component={<>
-                    <SandpackTests autoSave={false} watchMode={false} verbose autoRun  />
+                    <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
                 </>}>Test</Tab>
             </Tabs>
         </SandpackProvider>
