@@ -35,7 +35,7 @@ export default function CodeEditorV4() {
                     editorHeight: 500, // default - 300
                     // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
-                    visibleFiles: ["index.js", "App.js", "Component.js"],
+                    visibleFiles: ["index.js", "App.js", "Component.jsx"],
                 }}
                 customSetup={{
                     // entry: '/index.html',

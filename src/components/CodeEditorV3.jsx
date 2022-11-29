@@ -10,6 +10,7 @@ import { Tab, Tabs } from './TabComponent.jsx'
 import { theme } from './../utils/theme.js'
 import CustomEditor from './editorv3/CustomEditor';
 import { useEffect } from 'react';
+import MonacoEditor from './custom-editors/MonacoEditor';
 // import MonacoEditor from './custom-editors/MonacoEditor';
 export default function CodeEditorV3() {
     useEffect(() => {
@@ -52,8 +53,8 @@ export default function CodeEditorV3() {
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
-                            <CustomEditor />
-                            {/* <MonacoEditor language={"javascript"}/> */}
+                            {/* <CustomEditor /> */}
+                            <MonacoEditor language={"html"}/>
                         </SandpackThemeProvider>
                     </div>
                 </div>
