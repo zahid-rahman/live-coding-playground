@@ -4,9 +4,6 @@ import {
     SandpackConsole,
     SandpackPreview,
     SandpackThemeProvider,
-    SandpackFileExplorer,
-    Sandpack,
-    SandpackCodeEditor,
 } from '@codesandbox/sandpack-react'
 import files from '../files/v4files'
 import { Tab, Tabs } from './TabComponent.jsx'
@@ -16,37 +13,55 @@ export default function CodeEditorV4() {
 
     return (
         <>
-            {/* <Sandpack
+            <SandpackProvider
+                theme={theme}
                 template="react"
                 files={files}
-                theme={theme}
-                customSetup={{
-                    dependencies: {
-                        "react": "^18.2.0",
-                        "react-dom": "^18.2.0",
-                        "react-scripts": "5.0.1",
-                        "@testing-library/react": "13.4.0",
-                        "jsdom": "9.11.0",
-                        "@babel/preset-react": "7.18.6"
-                    },
-                }}
+                visibleFiles={["index.js", "App.js"]}
                 options={{
-                    showConsole: true,
-                    showConsoleButton: true,
                     showNavigator: true,
-                    // showLineNumbers: false, // default - true
-                    // showInlineErrors: true, // default - false
-                    // // wrapContent: true, // default - false
-                    // editorHeight: 500, // default - 300
-                    // // editorWidthPercentage: 60, // default - 50
-                    // showTabs: true,
-                    // closableTabs: true,
+                    showLineNumbers: true, // default - true
+                    showInlineErrors: true, // default - false
+                    // wrapContent: true, // default - false
+                    editorHeight: 500, // default - 300
+                    // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
-                    // visibleFiles: ["/App.js", "/index.js"],
+                    visibleFiles: ["index.js", "App.js", "Component.js"],
                 }}
-            />
-
-            <Sandpack template="test-ts" files={files} options={{ showTabs: false, showReadOnly: true }}/> */}
+                customSetup={{
+                    // entry: '/index.html',
+                    // main: '/index.html',
+                    environment: 'webpack',
+                    mode: 'tests',
+                    dependencies: {
+                        "@testing-library/react": "13.4.0",
+                        "jsdom": "9.11.0"
+                    },
+                    autoRun: false
+                }}
+            >
+                <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
+                    {/* <div className="flex justify-start h-full flex-col w-72 lg:w-96 xl:w-120">
+                        <SandpackFileExplorer className="" visibleFiles={["index.html"]} />
+                    </div> */}
+                    <div className="block relative w-full h-full">
+                        <SandpackThemeProvider>
+                            <CustomEditor />
+                        </SandpackThemeProvider>
+                    </div>
+                </div>
+                <Tabs>
+                    <Tab component={<div className="text-black">
+                        <SandpackPreview />
+                    </div>}>Preview</Tab>
+                    <Tab component={<div>
+                        <SandpackConsole showNavigator showHeader />
+                    </div>}>Console</Tab>
+                    <Tab component={<>
+                        <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                    </>}>Test</Tab>
+                </Tabs>
+            </SandpackProvider>
 
         </>
 

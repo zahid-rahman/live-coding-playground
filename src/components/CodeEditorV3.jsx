@@ -13,7 +13,6 @@ export default function CodeEditorV3() {
 
     return (
         <>
-
             <SandpackProvider
                 theme={theme}
                 template="vanilla"
