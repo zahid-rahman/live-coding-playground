@@ -6,6 +6,7 @@ import {
     // SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 import { files } from './../files/v2files'
+import MonacoEditor from './custom-editors/MonacoEditor'
 import { Tab, Tabs } from './TabComponent.jsx'
 export default function CodeEditor() {
     return (
@@ -36,7 +37,7 @@ export default function CodeEditor() {
                     <SandpackFileExplorer className="" />
                 </div> */}
                 <div className="block relative w-full h-full">
-                    <SandpackCodeEditor
+                    {/* <SandpackCodeEditor
                         showTabs
                         visibleFiles={["main.js"]}
                         autoSave
@@ -44,7 +45,9 @@ export default function CodeEditor() {
                         showInlineErrors={true}
                         wrapContent
                         closableTabs
-                    />
+                    /> */}
+
+                    <MonacoEditor language={"javascript"}/>
                 </div>
             </div>
             <Tabs>

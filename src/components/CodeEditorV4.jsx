@@ -7,14 +7,15 @@ import {
 } from '@codesandbox/sandpack-react'
 import files from '../files/v4files'
 import { Tab, Tabs } from './TabComponent.jsx'
-import { theme } from './theme.js'
+// import { theme } from './theme.js'
 import CustomEditor from './editorv3/CustomEditor';
+import { nightOwl } from '@codesandbox/sandpack-themes'
+import MonacoEditor from './custom-editors/MonacoEditor';
 export default function CodeEditorV4() {
 
     return (
         <>
             <SandpackProvider
-                theme={theme}
                 template="react"
                 files={files}
                 options={{
@@ -36,13 +37,15 @@ export default function CodeEditorV4() {
                         "@testing-library/react": "13.4.0",
                         "jsdom": "9.11.0"
                     },
-                    autoRun: false
+                    autoRun: false,
                 }}
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
-                        <SandpackThemeProvider>
-                            <CustomEditor />
+                        <SandpackThemeProvider theme={nightOwl}>
+                            {/* <CustomEditor />
+                             */}
+                             <MonacoEditor language="javascript" />
                         </SandpackThemeProvider>
                     </div>
                 </div>
