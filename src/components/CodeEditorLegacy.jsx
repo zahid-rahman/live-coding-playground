@@ -1,9 +1,17 @@
 import { Sandpack } from '@codesandbox/sandpack-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function CodeEditorLegacy() {
   const [env, setEnv] = useState("vanilla")
+  useEffect(() => {
+    window.onbeforeunload = function() {
+        return true;
+    };
 
+    return () => {
+        window.onbeforeunload = null;
+    };
+}, []);
     return (
         <>
             <select id="role" onClick={(event) => {
@@ -17,17 +25,12 @@ export default function CodeEditorLegacy() {
                 <option value="vanilla-ts">Vanilla(typescript)</option>
             </select>
             <Sandpack
-                // You can change these examples!
-                // Try uncommenting any of these lines
-                // theme="dark"
                 template={env}
                 options={{
                     showNavigator: true,
                     showLineNumbers: false, // default - true
                     showInlineErrors: true, // default - false
-                    // wrapContent: true, // default - false
                     editorHeight: 500, // default - 300
-                    // editorWidthPercentage: 60, // default - 50
                     showTabs: true,
                     closableTabs: true,
                     autorun: false,

@@ -9,8 +9,17 @@ import files from '../files/v3files'
 import { Tab, Tabs } from './TabComponent.jsx'
 import { theme } from './../utils/theme.js'
 import CustomEditor from './editorv3/CustomEditor';
+import { useEffect } from 'react';
 export default function CodeEditorV3() {
+    useEffect(() => {
+        window.onbeforeunload = function () {
+            return true;
+        };
 
+        return () => {
+            window.onbeforeunload = null;
+        };
+    }, []);
     return (
         <>
             <SandpackProvider
@@ -22,7 +31,6 @@ export default function CodeEditorV3() {
                     showNavigator: true,
                     showLineNumbers: true, // default - true
                     showInlineErrors: true, // default - false
-                    // wrapContent: true, // default - false
                     editorHeight: 500, // default - 300
                     // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
@@ -41,9 +49,6 @@ export default function CodeEditorV3() {
                 }}
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
-                    {/* <div className="flex justify-start h-full flex-col w-72 lg:w-96 xl:w-120">
-                        <SandpackFileExplorer className="" visibleFiles={["index.html"]} />
-                    </div> */}
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
                             <CustomEditor />
