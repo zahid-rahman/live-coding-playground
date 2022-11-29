@@ -10,6 +10,7 @@ import { Tab, Tabs } from './TabComponent.jsx'
 import { theme } from './../utils/theme.js'
 import CustomEditor from './editorv3/CustomEditor';
 import { useEffect } from 'react';
+// import MonacoEditor from './custom-editors/MonacoEditor';
 export default function CodeEditorV3() {
     useEffect(() => {
         window.onbeforeunload = function () {
@@ -52,6 +53,7 @@ export default function CodeEditorV3() {
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
                             <CustomEditor />
+                            {/* <MonacoEditor language={"javascript"}/> */}
                         </SandpackThemeProvider>
                     </div>
                 </div>

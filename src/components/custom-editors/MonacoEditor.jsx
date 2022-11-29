@@ -9,7 +9,10 @@ import {
 export default function MonacoEditor({ language }) {
   const { code, updateCode } = useActiveCode();
   const { sandpack } = useSandpack();
-
+  function handleEditorValidation(markers) {
+    // model markers
+    markers.forEach(marker => console.log("onValidate:", marker.message));
+  }
   return (
     <SandpackStack style={{ height: "40vh", margin: 0 }}>
       <FileTabs autoSave />
@@ -22,6 +25,7 @@ export default function MonacoEditor({ language }) {
           key={sandpack.activeFile}
           defaultValue={code}
           onChange={(value) => updateCode(value || "")}
+          onValidate={handleEditorValidation}
         />
       </div>
     </SandpackStack>
