@@ -6,10 +6,10 @@ import {
     // SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 import { useEffect } from 'react';
-import { files } from './../files/v2files'
-import MonacoEditor from './custom-editors/MonacoEditor'
-import { Tab, Tabs } from './TabComponent.jsx'
-export default function CodeEditor() {
+import { files } from '../../files/v2files'
+import MonacoEditor from '../custom-editors/MonacoEditor'
+import { Tab, Tabs } from '../TabComponent.jsx'
+export default function CodeEditorV2() {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;
