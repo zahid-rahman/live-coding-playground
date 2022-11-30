@@ -3,12 +3,9 @@ const globalBoilerPlate = `
 import { isFruit } from './main.js'
 /* find banana from this fruit list array ['apple', 'banana', 'cherry']*/
 export function fruit () {
-  
   // write down your code
   const data = isFruit("banana")
-  console.log(data)
   return data
-  // return data[0] === "banana" ? data[0] : null;
 }`
 
 const mainSnippet = `

@@ -7,8 +7,10 @@ import {
 } from '@codesandbox/sandpack-react'
 import files from '../files/v4files'
 import { Tab, Tabs } from './TabComponent.jsx'
-import { theme } from './../utils/theme'
-import CustomEditor from './editorv3/CustomEditor';
+// import { theme } from './theme.js'
+// import CustomEditor from './editorv3/CustomEditor';
+import { nightOwl } from '@codesandbox/sandpack-themes'
+import MonacoEditor from './custom-editors/MonacoEditor';
 import { useEffect } from 'react';
 export default function CodeEditorV4() {
     useEffect(() => {
@@ -23,7 +25,6 @@ export default function CodeEditorV4() {
     return (
         <>
             <SandpackProvider
-                theme={theme}
                 template="react"
                 files={files}
                 options={{
@@ -34,7 +35,7 @@ export default function CodeEditorV4() {
                     editorHeight: 500, // default - 300
                     // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
-                    visibleFiles: ["index.js", "App.js", "Component.js"],
+                    visibleFiles: ["index.js", "App.js", "Component.jsx"],
                 }}
                 customSetup={{
                     // entry: '/index.html',
@@ -45,13 +46,15 @@ export default function CodeEditorV4() {
                         "@testing-library/react": "13.4.0",
                         "jsdom": "9.11.0"
                     },
-                    autoRun: false
+                    autoRun: false,
                 }}
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
-                        <SandpackThemeProvider>
-                            <CustomEditor />
+                        <SandpackThemeProvider theme={nightOwl}>
+                            {/* <CustomEditor />
+                             */}
+                             <MonacoEditor language="javascript" />
                         </SandpackThemeProvider>
                     </div>
                 </div>

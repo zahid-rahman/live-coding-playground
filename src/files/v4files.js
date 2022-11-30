@@ -1,8 +1,7 @@
 const Component = `/* design a button that will be shown a paragraph tag with inner text "Rendered" after clicking it.
 Note: This button will behave like a toggle. Don't forget to import this component in App component */
-import React, {useState} from 'react'
+import React from 'react'
 export default function Component() {
-    const [willShow, setWillShow] = useState(false)
     return (
         <>
             {/* write your code here */}
@@ -55,9 +54,23 @@ describe('',() => {
 })
 `
 
+const App = `import Component from './Component'
+ export default function App() {
+  return (
+    <>
+      {/* add h1 tag code here */}
+      {/* add component here */}
+    </>
+  )
+ }
+`
+
 export const files = {
-  "Component.js": {
+  "Component.jsx": {
     code: Component
+  },
+  "App.js": {
+    code: App
   },
   'index.test.js': {
     code: reactTestCode

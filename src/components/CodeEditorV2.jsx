@@ -7,6 +7,7 @@ import {
 } from '@codesandbox/sandpack-react'
 import { useEffect } from 'react';
 import { files } from './../files/v2files'
+import MonacoEditor from './custom-editors/MonacoEditor'
 import { Tab, Tabs } from './TabComponent.jsx'
 export default function CodeEditor() {
     useEffect(() => {
@@ -41,7 +42,7 @@ export default function CodeEditor() {
         >
             <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                 <div className="block relative w-full h-full">
-                    <SandpackCodeEditor
+                    {/* <SandpackCodeEditor
                         showTabs
                         visibleFiles={["main.js"]}
                         autoSave
@@ -49,7 +50,9 @@ export default function CodeEditor() {
                         showInlineErrors={true}
                         wrapContent
                         closableTabs
-                    />
+                    /> */}
+
+                    <MonacoEditor language={"javascript"}/>
                 </div>
             </div>
             <Tabs>
