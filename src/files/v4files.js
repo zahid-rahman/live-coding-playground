@@ -9,17 +9,28 @@ export default function Component() {
     )
 }
 `
-/* ANSWER */
-// import React, {useState} from 'react'
-// export default function Component() {
-//     const [willShow, setWillShow] = useState(false)
-//     return (
-//         <>
-//             <button onClick={() => setWillShow(!willShow)}>click here</button>
-//             {willShow ? <p>Rendered</p> : null}
-//         </>
-//     )
-// }
+/* 
+
+ANSWER 
+ <App />
+
+ <h1>Hello World</h1>
+ <Component />
+
+
+ <Component>
+  import React, {useState} from 'react'
+  export default function Component() {
+      const [willShow, setWillShow] = useState(false)
+      return (
+          <>
+              <button onClick={() => setWillShow(!willShow)}>click here</button>
+              {willShow ? <p>Rendered</p> : null}
+          </>
+      )
+  }
+*/
+
 
 
 const reactTestCode = `import { render, screen, waitFor, fireEvent } from '@testing-library/react'
