@@ -7,7 +7,7 @@ import frameworkChallengeOneFile from '../files/framework-challenges/files'
 const FrameworkChallenges = () => {
   return (
     <>
-      <div id="question-one" className="p-5">
+      <div id="question-one" className="p-10">
         <h2 className="text-xl underline mb-3">Fetch data from api</h2>
         <p>
           Create a button and that button will load a list of 5 username after clicking it
@@ -17,18 +17,19 @@ const FrameworkChallenges = () => {
           <h3>Notes</h3>
           <ul>
             <li>Axios is installed already and also you can use fetch</li>
-            <li>only 5 user must be loaded</li>
+            <li>fetch only 5 username</li>
+            <li>Don't forget to use </li>
           </ul>
-          <p></p>
         </div>
         <CodeEditorV4 files={frameworkChallengeOneFile} />
       </div>
 
-      <div id="question-two" className="p-5">
+      <div id="question-two" className="p-10">
         <h2 className="text-xl underline mb-3">Toggle an element after clicking button</h2>
+        <p>Write a component that will have a button and toggle a rendered text inside a p tag named as "Rendered" </p>
         <ul>
           <li>Write a H1 tag with text "Hello World"</li>
-          <li>Design a button element</li>
+          <li>Design a button element and text name should be "click here"</li>
           <li>After clicking the button it will render a paragraph element</li>
         </ul>
         <div className="mb-3">

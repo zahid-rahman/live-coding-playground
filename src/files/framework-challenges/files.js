@@ -1,14 +1,4 @@
-const Component = `/* design a button that will be shown a paragraph tag with inner text "Rendered" after clicking it.
-Note: This button will behave like a toggle. Don't forget to import this component in App component */
-import React from 'react'
-export default function Component() {
-    return (
-        <>
-            {/* write your code here */}
-        </>
-    )
-}
-`
+
 /* 
 
 ANSWER 
@@ -62,21 +52,16 @@ describe('',() => {
 })
 `
 
-const App = `import Component from './Component'
- export default function App() {
+const App = `export default function App() {
   return (
     <>
-      {/* add h1 tag code here */}
-      {/* add component here */}
+      {/* put your code here */}
     </>
   )
  }
 `
 
 export const frameworkChallengeOneFile = {
-    "Component.jsx": {
-        code: Component
-    },
     "App.js": {
         code: App
     },
