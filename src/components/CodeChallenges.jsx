@@ -7,7 +7,7 @@ const CodeChallenges = () => {
   return (
     <>
        <div id="question-one" className="p-5">
-        <h2 className="text-xl underline mb-3">Convert "Zero" and "One" to "1" and "0"</h2>
+        <h2 className="text-xl underline mb-3">Convert "Zero" and "One" to "0" and "1"</h2>
         <p>
           Create a function that takes a string as an argument. The function must return a string containing 1s and 0s based on the string argument's words. If any word in the argument is not equal to "zero" or "one" (case insensitive), you should ignore it. The returned string's length should be a multiple of 8, if the string is not a multiple of 8 you should remove the numbers in excess.
         </p>
