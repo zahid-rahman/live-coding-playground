@@ -1,7 +1,7 @@
 import { SandpackTests } from '@codesandbox/sandpack-react'
 import React, { useState } from 'react'
 
-const TestPreview = () => {
+const TestPreview = ({ testFileName }) => {
     const [testResults, setTestResults] = useState([])
 
     console.log(testResults)
@@ -10,14 +10,11 @@ const TestPreview = () => {
         <>
             <div className="hidden">
                 <SandpackTests autoSave={false} watchMode={true} verbose autoRun onComplete={(data) => {
-                    // console.log("full data", data)
-                    // console.log("test data extract", data["/index.test.js"]["describes"][""].tests)
-
-                    setTestResults(data["/index.test.js"]["describes"][""].tests)
+                    setTestResults(data[testFileName]["describes"][""].tests)
                 }} />
             </div>
-            <div>
-                <p>Test results will be visible soon ...</p>
+            <div className="text-xl text-black">
+                <p>Custom test results will be visible soon ...</p>
             </div>
         </>
     )
