@@ -69,7 +69,7 @@ export default function CodeEditorV3() {
                     <Tab component={<>
                         {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
 
-                        <TestPreview />
+                        <TestPreview testFileName={"/index.test.js"}/>
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>
