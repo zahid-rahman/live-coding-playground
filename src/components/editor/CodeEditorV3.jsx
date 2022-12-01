@@ -11,6 +11,7 @@ import { theme } from '../../utils/theme.js'
 import CustomEditor from '../custom-editors/CustomEditor';
 import { useEffect } from 'react';
 import MonacoEditor from '../custom-editors/MonacoEditor';
+import TestPreview from '../TestPreview';
 // import MonacoEditor from './custom-editors/MonacoEditor';
 export default function CodeEditorV3() {
     useEffect(() => {
@@ -66,7 +67,9 @@ export default function CodeEditorV3() {
                         <SandpackConsole showNavigator showHeader />
                     </div>}>Console</Tab>
                     <Tab component={<>
-                        <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                        {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
+
+                        <TestPreview />
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>
