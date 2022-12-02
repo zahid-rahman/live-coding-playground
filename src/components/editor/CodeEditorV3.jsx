@@ -5,7 +5,6 @@ import {
     SandpackPreview,
     SandpackThemeProvider,
 } from '@codesandbox/sandpack-react'
-import files from '../../files/v3files'
 import { Tab, Tabs } from '../TabComponent.jsx'
 import { theme } from '../../utils/theme.js'
 import CustomEditor from '../custom-editors/CustomEditor';
@@ -13,7 +12,7 @@ import { useEffect } from 'react';
 import MonacoEditor from '../custom-editors/MonacoEditor';
 import TestPreview from './../test-preview/TestPreview';
 // import MonacoEditor from './custom-editors/MonacoEditor';
-export default function CodeEditorV3() {
+export default function CodeEditorV3({ files }) {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;

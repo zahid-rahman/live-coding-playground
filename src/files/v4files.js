@@ -42,9 +42,7 @@ describe('',() => {
   test('Test 1: Tag should be H1 in <App />',async () => {
     const { container } = render(<App />)
     const h1Element = container.querySelector("h1")
-    await waitFor(() => {
-      expect(h1Element.tagName).toBe("H1")
-    })
+    expect(h1Element.tagName).toBe("H1")
   })
 
   test('Test 2: Text should be Hello World in <App />',async () => {

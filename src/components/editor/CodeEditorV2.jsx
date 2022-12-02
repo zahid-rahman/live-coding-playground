@@ -6,11 +6,11 @@ import {
     // SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 import { useEffect } from 'react';
-import { files } from '../../files/v2files'
+// import { files } from '../../files/v2files'
 import MonacoEditor from '../custom-editors/MonacoEditor'
 import { Tab, Tabs } from '../TabComponent.jsx'
 import TestPreview from '../test-preview/TestPreview';
-export default function CodeEditorV2() {
+export default function CodeEditorV2({ files }) {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;
@@ -50,7 +50,6 @@ export default function CodeEditorV2() {
                         showLineNumbers={true}
                         showInlineErrors={true}
                         wrapContent
-                        closableTabs
                     />
 
                     {/* <MonacoEditor language={"javascript"}/> */}

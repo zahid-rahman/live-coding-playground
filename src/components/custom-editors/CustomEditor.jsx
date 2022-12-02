@@ -12,7 +12,6 @@ const CustomEditor = () => {
                 showLineNumbers={true}
                 showInlineErrors={true}
                 wrapContent
-                closableTabs
                 additionalLanguages={[
                     {
                         name: "html",
