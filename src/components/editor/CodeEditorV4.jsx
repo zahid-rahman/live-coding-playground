@@ -12,6 +12,7 @@ import { Tab, Tabs } from '../TabComponent.jsx'
 import { nightOwl } from '@codesandbox/sandpack-themes'
 import MonacoEditor from '../custom-editors/MonacoEditor';
 import { useEffect } from 'react';
+import TestPreview from '../test-preview/TestPreview';
 export default function CodeEditorV4() {
     useEffect(() => {
         window.onbeforeunload = function() {
@@ -66,7 +67,8 @@ export default function CodeEditorV4() {
                         <SandpackConsole showNavigator showHeader />
                     </div>}>Console</Tab>
                     <Tab component={<>
-                        <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                        {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
+                        <TestPreview testFileName={"/index.test.js"}/>
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>
