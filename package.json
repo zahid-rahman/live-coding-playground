@@ -39,6 +39,7 @@
   "devDependencies": {
     "@codemirror/autocomplete": "^6.3.4",
     "@codesandbox/sandpack-themes": "^1.17.0",
+    "@heroicons/react": "^2.0.13",
     "@monaco-editor/react": "^4.4.6",
     "@stackblitz/sdk": "^1.8.1",
     "@testing-library/dom": "^8.19.0",
