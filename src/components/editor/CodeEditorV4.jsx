@@ -5,15 +5,15 @@ import {
     SandpackPreview,
     SandpackThemeProvider,
 } from '@codesandbox/sandpack-react'
-// import files from '../../files/v4files'
+import files from '../../files/v4files'
 import { Tab, Tabs } from '../TabComponent.jsx'
 // import { theme } from './theme.js'
 // import CustomEditor from './editorv3/CustomEditor';
 import { nightOwl } from '@codesandbox/sandpack-themes'
 import MonacoEditor from '../custom-editors/MonacoEditor';
 import { useEffect } from 'react';
-
-export default function CodeEditorV4({ files }) {
+import TestPreview from '../test-preview/TestPreview';
+export default function CodeEditorV4() {
     useEffect(() => {
         window.onbeforeunload = function() {
             return true;
@@ -67,7 +67,8 @@ export default function CodeEditorV4({ files }) {
                         <SandpackConsole showNavigator showHeader />
                     </div>}>Console</Tab>
                     <Tab component={<>
-                        <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                        {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
+                        <TestPreview testFileName={"/index.test.js"}/>
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>

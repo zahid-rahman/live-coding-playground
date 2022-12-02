@@ -1,4 +1,4 @@
-import { SandpackTests } from '@codesandbox/sandpack-react'
+import { ConsoleIcon, SandpackTests } from '@codesandbox/sandpack-react'
 import React, { useState } from 'react'
 import TestData from './TestData'
 
@@ -11,8 +11,11 @@ const TestPreview = ({ testFileName }) => {
         <>
             <div className="hidden">
                 <SandpackTests autoSave={false} watchMode={true} verbose autoRun onComplete={(data) => {
-                    const tests = Object.values(data[testFileName]["describes"][""].tests);
-                    setTestResults(tests)
+                    console.log(data)                    
+                    if (data[testFileName]["describes"][""]) {
+                        const tests = Object.values(data[testFileName]["describes"][""].tests);
+                        setTestResults(tests)
+                    }
                 }} />
             </div>
             <div className="text-xl text-black">
