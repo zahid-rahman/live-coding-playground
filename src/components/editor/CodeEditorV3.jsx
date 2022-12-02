@@ -54,8 +54,8 @@ export default function CodeEditorV3() {
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
-                            {/* <CustomEditor /> */}
-                            <MonacoEditor language={"html"}/>
+                            <CustomEditor />
+                            {/* <MonacoEditor language={"html"}/> */}
                         </SandpackThemeProvider>
                     </div>
                 </div>

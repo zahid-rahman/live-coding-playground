@@ -43,7 +43,7 @@ export default function CodeEditorV2() {
         >
             <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                 <div className="block relative w-full h-full">
-                    {/* <SandpackCodeEditor
+                    <SandpackCodeEditor
                         showTabs
                         visibleFiles={["main.js"]}
                         autoSave
@@ -51,9 +51,9 @@ export default function CodeEditorV2() {
                         showInlineErrors={true}
                         wrapContent
                         closableTabs
-                    /> */}
+                    />
 
-                    <MonacoEditor language={"javascript"}/>
+                    {/* <MonacoEditor language={"javascript"}/> */}
                 </div>
             </div>
             <Tabs>
