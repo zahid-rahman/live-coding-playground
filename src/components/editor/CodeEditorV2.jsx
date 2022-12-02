@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import { files } from '../../files/v2files'
 import MonacoEditor from '../custom-editors/MonacoEditor'
 import { Tab, Tabs } from '../TabComponent.jsx'
-export default function CodeEditorV2() {
+export default function CodeEditorV2({ files }) {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;
@@ -30,12 +30,12 @@ export default function CodeEditorV2() {
                 editorHeight: 500, // default - 300
                 // editorWidthPercentage: 60, // default - 50
                 // autorun: false,
-                visibleFiles: ["/main.js"],
+                visibleFiles: ["/index.js", "/main.js"],
                 // autorun: false
             }}
             customSetup={{
-                entry: '/main.js',
-                main: '/main.js',
+                entry: '/index.js',
+                main: '/index.js',
                 environment: 'webpack',
                 mode: 'tests',
             }}
