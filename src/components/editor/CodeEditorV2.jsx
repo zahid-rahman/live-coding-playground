@@ -9,7 +9,8 @@ import { useEffect } from 'react';
 import { files } from '../../files/v2files'
 import MonacoEditor from '../custom-editors/MonacoEditor'
 import { Tab, Tabs } from '../TabComponent.jsx'
-export default function CodeEditorV2({ files }) {
+import TestPreview from '../test-preview/TestPreview';
+export default function CodeEditorV2() {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;
@@ -42,7 +43,7 @@ export default function CodeEditorV2({ files }) {
         >
             <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                 <div className="block relative w-full h-full">
-                    {/* <SandpackCodeEditor
+                    <SandpackCodeEditor
                         showTabs
                         visibleFiles={["main.js"]}
                         autoSave
@@ -50,9 +51,9 @@ export default function CodeEditorV2({ files }) {
                         showInlineErrors={true}
                         wrapContent
                         closableTabs
-                    /> */}
+                    />
 
-                    <MonacoEditor language={"javascript"}/>
+                    {/* <MonacoEditor language={"javascript"}/> */}
                 </div>
             </div>
             <Tabs>
@@ -60,7 +61,8 @@ export default function CodeEditorV2({ files }) {
                     <SandpackConsole showNavigator />
                 </div>}>Console</Tab>
                 <Tab component={<>
-                    <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                    {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
+                    <TestPreview testFileName={"/isFruit.test.js"}/>
                 </>}>Test</Tab>
             </Tabs>
         </SandpackProvider>

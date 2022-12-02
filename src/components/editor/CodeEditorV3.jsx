@@ -11,6 +11,7 @@ import { theme } from '../../utils/theme.js'
 import CustomEditor from '../custom-editors/CustomEditor';
 import { useEffect } from 'react';
 import MonacoEditor from '../custom-editors/MonacoEditor';
+import TestPreview from './../test-preview/TestPreview';
 // import MonacoEditor from './custom-editors/MonacoEditor';
 export default function CodeEditorV3() {
     useEffect(() => {
@@ -53,8 +54,8 @@ export default function CodeEditorV3() {
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
-                            {/* <CustomEditor /> */}
-                            <MonacoEditor language={"html"}/>
+                            <CustomEditor />
+                            {/* <MonacoEditor language={"html"}/> */}
                         </SandpackThemeProvider>
                     </div>
                 </div>
@@ -66,7 +67,9 @@ export default function CodeEditorV3() {
                         <SandpackConsole showNavigator showHeader />
                     </div>}>Console</Tab>
                     <Tab component={<>
-                        <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                        {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
+
+                        <TestPreview testFileName={"/index.test.js"}/>
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>

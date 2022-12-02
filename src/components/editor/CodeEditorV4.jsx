@@ -4,21 +4,23 @@ import {
     SandpackConsole,
     SandpackPreview,
     SandpackThemeProvider,
+    SandpackCodeEditor,
 } from '@codesandbox/sandpack-react'
-// import files from '../../files/v4files'
+import files from '../../files/v4files'
 import { Tab, Tabs } from '../TabComponent.jsx'
 // import { theme } from './theme.js'
 // import CustomEditor from './editorv3/CustomEditor';
 import { nightOwl } from '@codesandbox/sandpack-themes'
 import MonacoEditor from '../custom-editors/MonacoEditor';
 import { useEffect } from 'react';
-
-export default function CodeEditorV4({ files }) {
+import TestPreview from '../test-preview/TestPreview';
+import CustomEditor from '../custom-editors/CustomEditor';
+export default function CodeEditorV4() {
     useEffect(() => {
-        window.onbeforeunload = function() {
+        window.onbeforeunload = function () {
             return true;
         };
-    
+
         return () => {
             window.onbeforeunload = null;
         };
@@ -39,8 +41,6 @@ export default function CodeEditorV4({ files }) {
                     visibleFiles: ["index.js", "App.js", "Component.jsx"],
                 }}
                 customSetup={{
-                    // entry: '/index.html',
-                    // main: '/index.html',
                     environment: 'webpack',
                     mode: 'tests',
                     dependencies: {
@@ -53,9 +53,16 @@ export default function CodeEditorV4({ files }) {
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider theme={nightOwl}>
-                            {/* <CustomEditor />
-                             */}
-                             <MonacoEditor language="javascript" />
+                            <SandpackCodeEditor
+                                showTabs
+                                // visibleFiles={["main.js"]}
+                                autoSave
+                                showLineNumbers={true}
+                                showInlineErrors={true}
+                                wrapContent
+                                closableTabs
+                            />
+                            {/* <MonacoEditor language="javascript" /> */}
                         </SandpackThemeProvider>
                     </div>
                 </div>
@@ -67,7 +74,8 @@ export default function CodeEditorV4({ files }) {
                         <SandpackConsole showNavigator showHeader />
                     </div>}>Console</Tab>
                     <Tab component={<>
-                        <SandpackTests autoSave={false} watchMode={false} verbose autoRun />
+                        {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
+                        <TestPreview testFileName={"/index.test.js"} />
                     </>}>Test</Tab>
                 </Tabs>
             </SandpackProvider>
