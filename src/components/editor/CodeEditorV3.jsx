@@ -11,7 +11,7 @@ import { theme } from '../../utils/theme.js'
 import CustomEditor from '../custom-editors/CustomEditor';
 import { useEffect } from 'react';
 import MonacoEditor from '../custom-editors/MonacoEditor';
-import TestPreview from '../TestPreview';
+import TestPreview from './../test-preview/TestPreview';
 // import MonacoEditor from './custom-editors/MonacoEditor';
 export default function CodeEditorV3() {
     useEffect(() => {
