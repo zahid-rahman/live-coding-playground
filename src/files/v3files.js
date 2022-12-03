@@ -8,6 +8,7 @@ const htmlBoilerplateFiles = `<!DOCTYPE html>
   <body  onload="document.querySelector('a').style">
     <h1>Link</h1>
     <!-- Write the code below this line -->
+    <script src="src/index.js"></script>
   </body>
 </html>
 

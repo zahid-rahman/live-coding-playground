@@ -41,8 +41,8 @@ export default function CodeEditorV6({ files }) {
                     visibleFiles: ["index.html", "script.js"],
                 }}
                 customSetup={{
-                    entry: '/index.html',
-                    main: '/src/index.js',
+                    // entry: '/index.html',
+                    // main: '/src/index.js',
                     environment: 'webpack',
                     mode: 'tests',
                     dependencies: {
