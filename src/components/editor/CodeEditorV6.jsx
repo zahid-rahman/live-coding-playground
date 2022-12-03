@@ -5,7 +5,6 @@ import {
     SandpackPreview,
     SandpackThemeProvider,
     SandpackCodeEditor,
-    SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 import { Tab, Tabs } from '../TabComponent.jsx'
 import { theme } from '../../utils/theme.js'
@@ -54,7 +53,6 @@ export default function CodeEditorV6({ files }) {
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
-                        <SandpackFileExplorer />
                         <SandpackThemeProvider>
                             <SandpackCodeEditor
                                 showTabs
