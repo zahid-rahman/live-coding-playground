@@ -49,10 +49,10 @@ button.addEventListener('click',(event) => {
     let html = null;
     if(value === "" || generatedPinField === "") return;
     if(value === generatedPinField.value) {
-        html = "<h1 style="color:green">code matched</h1>"
+        html = "<h1 style='color:green'>code matched</h1>"
         input.value = ""
     } else {
-        html = "<h1 style="color:red">wrong code</h1>"
+        html = "<h1 style='color:red'>wrong code</h1>"
         input.value = ""
     }
     result.innerHTML = html
