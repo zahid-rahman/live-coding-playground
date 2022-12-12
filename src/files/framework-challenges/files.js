@@ -56,6 +56,8 @@ const App = `export default function App() {
   return (
     <>
       {/* put your code here */}
+      const getAboutUsLink = require('./index');\n\n test('Return about-us for english language', () => {\n \n
+        expect(getAboutUsLink('en-UK')).toBe('/about-us');\n \n }
     </>
   )
  }

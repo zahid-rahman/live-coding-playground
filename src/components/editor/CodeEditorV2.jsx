@@ -22,6 +22,7 @@ export default function CodeEditorV2({ files }) {
     return (
         <SandpackProvider
             files={files}
+            template={"vanilla"}
             // visibleFiles={['/index.js']}
             options={{
                 showNavigator: true,

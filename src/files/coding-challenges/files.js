@@ -1,7 +1,9 @@
 // files for coding challenges
-const globalBoilerPlate = `export function textToNumberBinary(str) {
+const globalBoilerPlate = `
+export function textToNumberBinary(str) {
 	/* put your code here */
-}`
+}
+`
 
 /*
 Solution:

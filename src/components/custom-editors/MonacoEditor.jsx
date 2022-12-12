@@ -21,16 +21,18 @@ export default function MonacoEditor({ language }) {
     return (
         <SandpackStack style={{ height: "40vh", margin: 0 }}>
             <FileTabs autoSave />
-            <div style={{ flex: 1, paddingTop: 8, background: filePanelGapColor }}>
+            <div style={{ flex: 1, paddingTop: 8, background: filePanelGapColor }} >
                 <Editor
                     width="100%"
                     height="100%"
                     language={language}
-                    theme={language === 'html' ? "": "vs-dark"}
+                    theme={language === 'html' ? "vs-light": "vs-dark"}
                     key={sandpack.activeFile}
                     defaultValue={code}
                     onChange={(value) => updateCode(value || "")}
                     // editorDidMount={handleEditorDidMount}
+                    allow="clipboard-read; clipboard-write"
+                    
                 />
             </div>
         </SandpackStack>

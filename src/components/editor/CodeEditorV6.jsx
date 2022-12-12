@@ -54,14 +54,14 @@ export default function CodeEditorV6({ files }) {
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
                         <SandpackThemeProvider>
-                            <SandpackCodeEditor
+                            {/* <SandpackCodeEditor
                                 showTabs
                                 autoSave
                                 showLineNumbers={true}
                                 showInlineErrors={true}
                                 wrapContent
-                            />
-                            {/* <MonacoEditor language={"html"}/> */}
+                            /> */}
+                            <MonacoEditor language={"html"}/>
                         </SandpackThemeProvider>
                     </div>
                 </div>

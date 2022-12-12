@@ -27,6 +27,8 @@ const htmlBoilerplateFiles = `<!DOCTYPE html>
 `
 
 const scriptBaseCode = `
+
+
 const input = document.querySelector(".pin-field")
 const generatedPinField = document.querySelector(".generated-pin")
 const result = document.querySelector(".result")
@@ -34,9 +36,9 @@ const button = document.querySelector(".submit-button")
 const copyButton = document.querySelector(".copy-btn")
 const generateButton = document.querySelector(".generate-pin-btn")
 
-copyButton.addEventListener('click', (event) => {
-    navigator.clipboard.writeText(generatedPinField.value);
-    copyButton.innerText = "copied"
+copyButton.addEventListener('click',async(event) => {
+    generatedPinField.select();
+    document.execCommand('copy')
 })
 
 generateButton.addEventListener('click',(event) => {
@@ -56,7 +58,9 @@ button.addEventListener('click',(event) => {
         input.value = ""
     }
     result.innerHTML = html
-})`
+})
+
+`
 
 const htmlTestCode = `import { fireEvent, getByText } from '@testing-library/dom'
 import fs from 'fs'
@@ -103,9 +107,9 @@ export const uiChallengeOneFiles = {
     '/src/index.js': {
         code: scriptBaseCode
     },
-    '/index.test.js': {
-        code: htmlTestCode
-    },
+    // '/index.test.js': {
+    //     code: htmlTestCode
+    // },
 }
 
 export default uiChallengeOneFiles
