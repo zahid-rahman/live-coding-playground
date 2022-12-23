@@ -6,11 +6,10 @@ import {
     // SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 import { useEffect } from 'react';
-import { files } from '../../files/v2files'
 import MonacoEditor from '../custom-editors/MonacoEditor'
 import { Tab, Tabs } from '../TabComponent.jsx'
 import TestPreview from '../test-preview/TestPreview';
-export default function CodeEditorV2() {
+export default function CodeEditorV2({ files }) {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;
@@ -62,7 +61,7 @@ export default function CodeEditorV2() {
                 </div>}>Console</Tab>
                 <Tab component={<>
                     {/* <SandpackTests autoSave={false} watchMode={false} verbose autoRun /> */}
-                    <TestPreview testFileName={"/isFruit.test.js"}/>
+                    <TestPreview testFileName={"/index.test.js"}/>
                 </>}>Test</Tab>
             </Tabs>
         </SandpackProvider>

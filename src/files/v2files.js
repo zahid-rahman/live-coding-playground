@@ -33,7 +33,7 @@ export const files = {
     '/main.js': {
       code: mainSnippet
   },
-    '/isFruit.test.js': {
+    '/index.test.js': {
         code: isFruitTestJs
     }
 

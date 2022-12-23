@@ -8,7 +8,6 @@ const TestPreview = ({ testFileName }) => {
         <>
             <div className="hidden">
                 <SandpackTests autoSave={false} watchMode={true} verbose autoRun onComplete={(data) => {
-                    console.log(data)
                     if (data[testFileName]["describes"] && data[testFileName]["describes"][""]) {
                         const tests = Object.values(data[testFileName]["describes"][""].tests);
                         setTestResults(tests)

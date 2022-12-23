@@ -6,7 +6,7 @@ import {
     SandpackThemeProvider,
     SandpackCodeEditor,
 } from '@codesandbox/sandpack-react'
-import files from '../../files/v4files'
+// import files from '../../files/v4files'
 import { Tab, Tabs } from '../TabComponent.jsx'
 // import { theme } from './theme.js'
 // import CustomEditor from './editorv3/CustomEditor';
@@ -14,8 +14,8 @@ import { nightOwl } from '@codesandbox/sandpack-themes'
 import MonacoEditor from '../custom-editors/MonacoEditor';
 import { useEffect } from 'react';
 import TestPreview from '../test-preview/TestPreview';
-import CustomEditor from '../custom-editors/CustomEditor';
-export default function CodeEditorV4() {
+// import CustomEditor from '../custom-editors/CustomEditor';
+export default function CodeEditorV4({ files }) {
     useEffect(() => {
         window.onbeforeunload = function () {
             return true;

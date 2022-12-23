@@ -42,7 +42,6 @@ describe('',() => {
     fireEvent.click(getByText('load data'))
     await waitFor(() => {
         const list = getByRole("users")
-        console.log("user list:",list)
         const { getAllByRole } = within(list)
         const items = getAllByRole("listitem")
         expect(items.length).toBe(5)
