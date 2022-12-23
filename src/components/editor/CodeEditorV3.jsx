@@ -28,7 +28,7 @@ export default function CodeEditorV3({ files }) {
                 theme={theme}
                 template="vanilla"
                 files={files}
-                visibleFiles={['index.html']}
+                // visibleFiles={['index.html']}
                 options={{
                     showNavigator: true,
                     showLineNumbers: true, // default - true
@@ -36,16 +36,17 @@ export default function CodeEditorV3({ files }) {
                     editorHeight: 500, // default - 300
                     // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
-                    visibleFiles: ["index.html"],
+                    // visibleFiles: ["index.html"],
                 }}
                 customSetup={{
-                    entry: '/index.html',
-                    main: '/index.html',
+                    // entry: '/index.html',
+                    // main: '/index.html',
                     environment: 'webpack',
                     mode: 'tests',
                     dependencies: {
                         "@testing-library/dom": "8.19.0",
-                        "jsdom": "9.11.0"
+                        "jsdom": "9.11.0",
+                        "quixote": "1.0.1"
                     },
                     autoRun: false
                 }}

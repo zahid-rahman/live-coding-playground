@@ -3,10 +3,15 @@ const htmlBoilerplateFiles = `<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <title>Link</title>
-    <link rel="stylesheet" src="./style.css"/>
+    <link rel="stylesheet" src="./styles.css"/>
+    <style>
+      .link-color {
+        color: "red"
+      }
+    </style>
   </head>
   <body  onload="document.querySelector('a').style">
-    <h1>Link</h1>
+    <h1 class="link-color" >Link</h1>
     <!-- Write the code below this line -->
     <script src="src/index.js"></script>
   </body>
@@ -56,9 +61,14 @@ export function setCode(code) {
 }
 
 export const files = {
-    'index.html': {
-        code: htmlBoilerplateFiles
+    '/styles.css': {
+      code: `.link-color: {
+        color: "red"
+    }`
     },
+    // 'index.html': {
+    //     code: htmlBoilerplateFiles
+    // },
     'index.test.js': {
         code: htmlTestCode
     },
