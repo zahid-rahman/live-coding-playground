@@ -2,6 +2,9 @@ import React from 'react'
 import CodeEditorV4 from './editor/CodeEditorV4'
 import files from './../files/v4files'
 import frameworkChallengeOneFile from '../files/framework-challenges/files'
+import frameworkChallengeContextFile from '../files/framework-challenges/context-files'
+import frameworkChallengeCustomHookFile from '../files/framework-challenges/custom-hook'
+import frameworkChallengeReduxFiles from '../files/framework-challenges/redux-files'
 // import 
 
 const FrameworkChallenges = () => {
@@ -35,6 +38,30 @@ const FrameworkChallenges = () => {
         <div className="mb-3">
         </div>
         <CodeEditorV4 files={files} />
+      </div>
+
+
+      <div id="question-context" className="p-10">
+        <h2 className="text-xl underline mb-3">Context api question</h2>
+        <div className="mb-3">
+        </div>
+        <CodeEditorV4 files={frameworkChallengeContextFile} />
+      </div>
+
+
+      <div id="question-custom-hook" className="p-10">
+        <h2 className="text-xl underline mb-3">Custom hook</h2>
+        <div className="mb-3">
+        </div>
+        <CodeEditorV4 files={frameworkChallengeCustomHookFile} />
+      </div>
+
+
+      <div id="question-redux" className="p-10">
+        <h2 className="text-xl underline mb-3">React Redux</h2>
+        <div className="mb-3">
+        </div>
+        <CodeEditorV4 files={frameworkChallengeReduxFiles} />
       </div>
 
     </>

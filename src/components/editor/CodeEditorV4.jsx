@@ -5,6 +5,7 @@ import {
     SandpackPreview,
     SandpackThemeProvider,
     SandpackCodeEditor,
+    SandpackFileExplorer,
 } from '@codesandbox/sandpack-react'
 // import files from '../../files/v4files'
 import { Tab, Tabs } from '../TabComponent.jsx'
@@ -15,6 +16,7 @@ import MonacoEditor from '../custom-editors/MonacoEditor';
 import { useEffect } from 'react';
 import TestPreview from '../test-preview/TestPreview';
 import CustomEditor from '../custom-editors/CustomEditor';
+import { reduxPackages } from '../../utils/packages.js';
 export default function CodeEditorV4({ files }) {
     useEffect(() => {
         window.onbeforeunload = function () {
@@ -38,20 +40,22 @@ export default function CodeEditorV4({ files }) {
                     editorHeight: 500, // default - 300
                     // editorWidthPercentage: 60, // default - 50
                     // autorun: false,
-                    visibleFiles: ["index.js", "App.js", "Component.jsx"],
+                    // visibleFiles: ["index.js", "App.js", "Component.jsx"],
                 }}
                 customSetup={{
                     environment: 'webpack',
                     mode: 'tests',
                     dependencies: {
                         "@testing-library/react": "13.4.0",
-                        "jsdom": "9.11.0"
+                        "jsdom": "9.11.0",
+                        ...reduxPackages
                     },
                     autoRun: false,
                 }}
             >
                 <div className="flex flex-col md:flex-row w-full h-full flex-grow items-center overflow-hidden bg-black">
                     <div className="block relative w-full h-full">
+                        <SandpackFileExplorer />
                         <SandpackThemeProvider theme={nightOwl}>
                             <SandpackCodeEditor
                                 showTabs

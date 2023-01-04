@@ -34,7 +34,8 @@
         }
 
         .html-code, .css-code {
-            height:400px;
+            background: red;
+            height:200px;
         }
     </style>
 
@@ -56,7 +57,7 @@
         htmlEditor = CodeMirror(document.querySelector(".html-code"), {
                 lineNumbers: true,
                 matchBrackets: true,
-                height: "500px",
+                height: "200px",
                 lineWrapping: true,
                 indentUnit: 4,
                 mode: "xml"
@@ -65,7 +66,7 @@
         cssEditor = CodeMirror(document.querySelector(".css-code"),{
                 lineNumbers: true,
                 matchBrackets: true,
-                height: "500px",
+                height: "200px",
                 lineWrapping: true,
                 indentUnit: 4,
                 mode: "css"
@@ -74,7 +75,9 @@
         
         document.querySelector(".run").addEventListener("click", function() {
             let htmlCode = htmlEditor.getValue();
-            let cssCode = "<style>" + cssEditor.getValue() + "</style>"
+            let cssCode = "<style>" + cssEditor.getValue() + "</style>" 
+            console.log("css",cssCode)
+            console.log("html", htmlCode);
             let previewWindow = document.querySelector('#preview-window').contentWindow.document;
 
             previewWindow.open();
